@@ -305,32 +305,32 @@
                                 Seat
                             </h3>
                             <div class="bg-gray-200 py-4 px-8 rounded-2xl mt-6">
-                                <div
-                                    class="flex items-center justify-between border-b-2 border-gray-400 border-dashed pb-2">
+                                <div class="grid grid-cols-3 border-b-2 border-gray-400 border-dashed pb-2">
                                     <h3 class="font-bold">Seat <span class="bg-[#1DD100] px-2 text-white rounded-full"
                                             id="countSeat">0</span></h3>
-                                    <h3 class="font-bold">Class</h3>
-                                    <h3 class="font-bold">Price</h3>
+                                    <h3 class="font-bold text-center">Class</h3>
+                                    <h3 class="font-bold text-right">Price</h3>
                                 </div>
-                                <div class="flex items-center justify-between border-b-2 border-gray-400 mt-4 mb-4">
+                                <div class="grid grid-cols-3 border-b-2 border-gray-400 mt-4 mb-4" id="addSeat">
 
                                 </div>
                                 <div class="flex items-center justify-between pb-2">
                                     <h3 class="font-bold">Total Price</h3>
-                                    <h3 class="font-bold">BDT <span></span></h3>
+                                    <h3 class="font-bold">BDT <span id="totalPrice"></span></h3>
                                 </div>
 
                                 <!-- Coupon............................... -->
-                                <div class="join w-full mt-2 mb-2">
+                                <div class="join w-full mt-2 mb-2" id="couponField">
                                     <input type="text" placeholder="Have any coupon?"
-                                        class="input input-bordered join-item w-3/4 border-none" />
-                                    <button class="btn join-item w-3/12 bg-[#1DD100]">Apply</button>
+                                        class="input input-bordered join-item w-3/4 border-none" id="coupon" />
+                                    <button class="btn join-item w-3/12 bg-[#1DD100]" id="couponApplyBtn"
+                                        onclick="couponFunction()" disabled>Apply</button>
                                 </div>
 
 
                                 <div class="flex items-center justify-between pb-2">
                                     <h3 class="font-bold">Grand Total</h3>
-                                    <h3 class="font-bold">BDT <span></span></h3>
+                                    <h3 class="font-bold">BDT <span id="grandTotal"></span></h3>
                                 </div>
 
                             </div>
