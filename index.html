@@ -17,6 +17,16 @@
         .raleway {
             font-family: "Raleway", sans-serif;
         }
+
+        .remove-arrow::-webkit-inner-spin-button,
+        .remove-arrow::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .remove-arrow {
+            -moz-appearance: textfield;
+        }
     </style>
 
 </head>
@@ -338,13 +348,13 @@
                                 <p class="font-bold mb-2">Passenger Name*</p>
                                 <input type="text" placeholder="Enter Your Name"
                                     class="input input-bordered w-full mb-2" />
-                                <p class="font-bold mb-2">Phone Number*</p>
+                                <p class="font-bold mb-2 ">Phone Number*</p>
                                 <input type="number" placeholder="Enter Your Phone Number"
-                                    class="input input-bordered w-full mb-2" />
+                                    class="remove-arrow input input-bordered w-full mb-2 " id="phoneNumber" />
                                 <p class="font-bold mb-2">Email ID*</p>
                                 <input type="email" placeholder="Enter Your Email Id"
                                     class="input input-bordered w-full mb-2" />
-                                <button class="btn w-full bg-[#1DD100] mt-4">Next</button>
+                                <button class="btn w-full bg-[#1DD100] mt-4" id="nextBtn" disabled>Next</button>
                             </div>
                             <div class="flex justify-around mt-6">
                                 <a href="" class="underline">Terms and Conditions</a>
