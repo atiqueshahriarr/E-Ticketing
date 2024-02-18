@@ -54,7 +54,6 @@ for (let i of allSeats) {
         let phoneNumberValue = parseInt(phoneNumberField.value);
         if (phoneNumberValue >= 0 && click > 0) {
           const nextBtn = document.getElementById("nextBtn");
-          console.log(nextBtn);
           nextBtn.removeAttribute("disabled")
         }
       })
@@ -102,5 +101,62 @@ function couponFunction() {
 
   const grandTotalField = document.getElementById("grandTotal");
   grandTotalField.innerHTML = " " + grandTotalFare;
+}
+
+
+
+
+function nextFunction() {
+  const mainSection = document.getElementById("mainSection");
+  mainSection.classList.add("hidden");
+
+  const successSection = document.getElementById("successSection");
+  successSection.classList.remove("hidden");
+
+}
+
+
+
+function continueFunction() {
+  const mainSection = document.getElementById("mainSection");
+  mainSection.classList.remove("hidden");
+
+  const successSection = document.getElementById("successSection");
+  successSection.classList.add("hidden");
+
+
+
+
+  for (let i of allSeats) {
+    i.classList.remove("bg-[#1DD100]");
+    i.classList.add("bg-gray-200");
+    i.removeAttribute("disabled");
+  }
+
+  click = 0, totalFare = 0, grandTotalFare = 0, discountFare = 0;
+
+  const leftSeatField = document.getElementById("leftSeat");
+  leftSeatField.innerText = 40;
+
+  const countSeatField = document.getElementById("countSeat");
+  countSeatField.innerText = 0;
+
+  const addSeatField = document.getElementById("addSeat");
+  addSeatField.innerText = "";
+
+  const totalPriceField = document.getElementById("totalPrice");
+  totalPriceField.innerText = 0;
+
+  const grandTotalField = document.getElementById("grandTotal");
+  grandTotalField.innerText = 0;
+
+  const phoneNumberField = document.getElementById("phoneNumber");
+  phoneNumberField.value = "";
+
+  const couponApplyBtn = document.getElementById("couponApplyBtn");
+  couponApplyBtn.setAttribute("disabled", true);
+
+  const nextBtn = document.getElementById("nextBtn");
+  nextBtn.setAttribute("disabled", true);
 
 }
