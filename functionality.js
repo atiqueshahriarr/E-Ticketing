@@ -2,7 +2,7 @@ console.log("Hello");
 
 const allSeats = document.getElementsByClassName("seat");
 let click = 0;
-let totalFare = 0, grandTotalFare = 0;
+let totalFare = 0, grandTotalFare = 0, discountFare = 0;
 
 
 for (let i of allSeats) {
@@ -69,17 +69,8 @@ for (let i of allSeats) {
 
 
 
-
-// if (phoneNumberValue >= 0 && click > 0) {
-//   console.log("Hi");
-
-//   console.log(nextBtn);
-// }
-
-
 function couponFunction() {
   const fare = parseInt(document.getElementById("totalPrice").innerText);
-  console.log(fare);
 
   const couponInputField = document.getElementById("coupon");
   const couponFieldValue = couponInputField.value;
@@ -87,15 +78,29 @@ function couponFunction() {
   const couponField = document.getElementById("couponField");
 
   if (couponFieldValue === "NEW15") {
-    grandTotalFare = fare - (fare * 0.15);
+    discountFare = fare * 0.15;
+    grandTotalFare = fare - discountFare;
   }
   else if (couponFieldValue === "Couple 20") {
-    grandTotalFare = fare - (fare * 0.20);
+    discountFare = fare * 0.20;
+    grandTotalFare = fare - discountFare;
   }
   else {
     couponField.classList.add("hidden");
+    grandTotalFare = fare;
   }
+
+
+  if (discountFare > 0) {
+    const discountField = document.getElementById("discountField");
+    const discountTotalField = document.getElementById("discountTotal")
+    discountTotalField.innerText = " " + discountFare;
+    discountField.classList.remove("hidden");
+    console.log(discountField);
+  }
+
 
   const grandTotalField = document.getElementById("grandTotal");
   grandTotalField.innerHTML = " " + grandTotalFare;
+
 }

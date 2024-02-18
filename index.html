@@ -23,10 +23,6 @@
             -webkit-appearance: none;
             margin: 0;
         }
-
-        .remove-arrow {
-            -moz-appearance: textfield;
-        }
     </style>
 
 </head>
@@ -337,7 +333,10 @@
                                         onclick="couponFunction()" disabled>Apply</button>
                                 </div>
 
-
+                                <div class="flex items-center justify-between pb-2 hidden" id="discountField">
+                                    <h3 class="font-bold">Discount</h3>
+                                    <h3 class="font-bold">BDT <span id="discountTotal"></span></h3>
+                                </div>
                                 <div class="flex items-center justify-between pb-2">
                                     <h3 class="font-bold">Grand Total</h3>
                                     <h3 class="font-bold">BDT <span id="grandTotal"></span></h3>
