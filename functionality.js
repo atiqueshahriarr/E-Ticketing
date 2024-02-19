@@ -124,9 +124,6 @@ function continueFunction() {
   const successSection = document.getElementById("successSection");
   successSection.classList.add("hidden");
 
-
-
-
   for (let i of allSeats) {
     i.classList.remove("bg-[#1DD100]");
     i.classList.add("bg-gray-200");
